@@ -8,10 +8,8 @@ import org.springframework.stereotype.Component;
  * @date: 2022-07-13 16:02
  */
 @Component
-@WordAspect
-public class BuyCat implements Buy{
+public class BuyCat{
 
-    @Override
     public String buy(Cat cat) {
         return cat.getName();
     }

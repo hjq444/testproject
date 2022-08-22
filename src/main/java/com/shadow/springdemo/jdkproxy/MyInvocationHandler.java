@@ -9,6 +9,7 @@ import java.lang.reflect.Method;
  * @date: 2022-06-25 10:54
  */
 public class MyInvocationHandler implements InvocationHandler {
+
     private Object target;
 
     public MyInvocationHandler(Object target) {
@@ -18,6 +19,6 @@ public class MyInvocationHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("method :" + method.getName() + " is invoked!");
-        return method.invoke(target, args);
+        return method.invoke(target,args);
     }
 }
