@@ -15,7 +15,7 @@ public class App {
         Helloworld helloWorld = (Helloworld) Proxy.newProxyInstance(
                 Helloworld.class.getClassLoader(),
                 new Class<?>[]{Helloworld.class},
-                new MyInvocationHandler(new HelloworldImpl())); //此处目标实现为HelloworldImpl
+                new MyInvocationHandler(new TestImpl())); //此处目标实现为HelloworldImpl
         helloWorld.sayHello();
     }
 }

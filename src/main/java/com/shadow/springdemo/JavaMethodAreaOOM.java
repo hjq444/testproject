@@ -8,9 +8,10 @@ import java.lang.reflect.Method;
 
 public class JavaMethodAreaOOM {
     public static void main(String[] args) {
+
         while (true) {
             Enhancer enhancer = new Enhancer();
-            enhancer.setSuperclass(OOM.class);
+            enhancer.setSuperclass(JavaMethodAreaOOM.OOM.class);
             enhancer.setUseCache(false);
             enhancer.setCallback(new MethodInterceptor() {
 
@@ -19,8 +20,9 @@ public class JavaMethodAreaOOM {
                     return proxy.invokeSuper(obj, args);
                 }
             });
-            OOM oom = (OOM) enhancer.create();
+            JavaMethodAreaOOM.OOM oom = (JavaMethodAreaOOM.OOM) enhancer.create();
             oom.sayHello("Kevin LUAN");
+            System.out.println(">.....");
         }
     }
 
